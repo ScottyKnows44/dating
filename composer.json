@@ -1,0 +1,12 @@
+{
+  "name":"sthompson/328/dating",
+  "authors": [
+    {
+      "name": "Scott Thompson",
+      "email": "sthompson42@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
