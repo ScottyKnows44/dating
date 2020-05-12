@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Pet Order</title>
+    <include href="includes/header.html"></include>
+<body>
+<div class="container">
+
+    <form action="#" method="post" class="form-horizontal">
+
+        <h1>Please tell us a little about your pet</h1>
+
+        <div class="form-group">
+
+            <label for="first" class="col-sm-2 control-label">First Name</label>
+
+            <div class="col-sm-4">
+                <input class="form-control" type="text" name="first" id="first">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="last" class="col-sm-2 control-label">Last Name</label>
+
+            <div class="col-sm-4">
+                <input class="form-control" type="text" name="last" id="last">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="age" class="col-sm-2 control-label">Age</label>
+            <div class="col-sm-4">
+                <input class="form-control" type="number" name="age" id="age">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Gender</label>
+
+            <div class="col-sm-4">
+                <repeat group="{{ @genders }}" value="{{ @gender }}" >
+                    <input type="radio" name="gender" id="{{ @gender }}" value="{{ @gender }}">{{ @gender }}  </input>
+                </repeat>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="phoneNumber" class="col-sm-2 control-label">Phone Number</label>
+            <div class="col-sm-4">
+                <input class="form-control" type="number" name="phoneNumber" id="phoneNumber">
+            </div>
+        </div>
+
+        <div class="col-xs-3 ">
+            <input class="form-control btn btn-default"
+                   type="submit" href="start2" value="Submit">
+        </div>
+    </form>
+
+</div>
+
+</body>
+</html>

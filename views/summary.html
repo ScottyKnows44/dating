@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Food Order</title>
+    <include href="includes/header.html"></include>
+</head>
+<body>
+    <p>You have submitted {{@SESSION.first}} {{@SESSION.last}} as your name and with the gender of {{ @SESSION.gender }} with a phone number of {{ @SESSION.phoneNumber }} </p>
+    <p>For Page do you have {{ @SESSION.email }} for you email, You are from the state of {{ @SESSION.state }}, your preferred gender is {{ @SESSION.genderPage2 }}, and you wrote this in your Bio {{ @SESSION.bio }}  </p>
+    <p>Your indoor interests are {{ implode(@SESSION.indoor, ", ") }} and your outdoor interests are {{ implode(@SESSION.outdoor, " , ") }} </p>
+
+</body>
+</html>

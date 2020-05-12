@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Pet Order 3</title>
+    <include href="includes/header.html"></include>
+</head>
+<body>
+<div class="container">
+
+    <form action="#" method="post" class="form-horizontal">
+
+        <h1>Interests</h1>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">In-door Interest</label>
+
+            <div class="col-sm-4">
+                <repeat group="{{ @indoors }}" value="{{ @indoor }}" >
+                    <input type="checkbox" name="indoor[]" name="indoor" id="{{ @indoor }}" value="{{ @indoor }}">{{ @indoor }}  </input>
+                </repeat>
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Out-door Interests</label>
+
+            <div>
+                <repeat group="{{ @outdoors }}" value="{{ @outdoor }}" >
+                    <input type="checkbox" name="outdoor[]" id="{{ @outdoor }}" value="{{ @outdoor }}">{{ @outdoor }}  </input>
+                </repeat>
+            </div>
+
+        </div>
+
+        <div class="col-xs-3 ">
+            <input class="form-control btn btn-default"
+                   type="submit" href="summary" value="Submit">
+        </div>
+    </form>
+
+</div>
+</body>
+</html>
