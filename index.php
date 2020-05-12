@@ -14,10 +14,12 @@ $f3->route('GET / ', function(){
 
 $f3->route('GET|POST /start ', function($f3){
     $genders = getGender();
+    //var_dump($_POST);
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
-        $_SESSION['genders'] = $_POST['genders'];
+        $_SESSION['genders'] = $_POST['gender'];
         $_SESSION['first'] = $_POST['first'];
         $_SESSION['last'] = $_POST['last'];
+        $_SESSION['age'] = $_POST['age'];
         $_SESSION['phoneNumber'] = $_POST['phoneNumber'];
         $f3->reroute('start2');
     }
@@ -38,7 +40,6 @@ $f3->route('GET|POST /start2 ', function ($f3){
         $_SESSION['email'] = $_POST['email'];
         $_SESSION['bio'] = $_POST['bio'];
         $f3->reroute('start3');
-        session_destroy();
     }
 
     $f3->set('genders', $genders);
