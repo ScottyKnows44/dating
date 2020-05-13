@@ -17,3 +17,12 @@ body{
     background: orange;
     box-shadow: 10px 0 0 orange, -10px 0 0 orange;
 }
+.quote{
+
+}
+
+#pictures{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+}

@@ -1,9 +1,9 @@
 <?php
 //ini_set('display_errors', 1);
 //error_reporting(E_ALL);
-
 require_once('vendor/autoload.php');
 require_once('models/data-layer.php');
+
 session_start();
 $f3 = Base::instance();
 

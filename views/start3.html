@@ -16,7 +16,7 @@
 
             <div class="col-sm-4">
                 <repeat group="{{ @indoors }}" value="{{ @indoor }}" >
-                    <input type="checkbox" name="indoor[]" name="indoor" id="{{ @indoor }}" value="{{ @indoor }}">       {{ @indoor }}       </input>
+                    <input type="checkbox" name="indoor[]"  value="{{ @indoor }}">       {{ @indoor }}
                 </repeat>
             </div>
 
@@ -27,7 +27,7 @@
 
             <div>
                 <repeat group="{{ @outdoors }}" value="{{ @outdoor }}" >
-                    <input type="checkbox" name="outdoor[]" id="{{ @outdoor }}" value="{{ @outdoor }}">       {{ @outdoor }}       </input>
+                    <input type="checkbox" name="outdoor[]"  value="{{ @outdoor }}">       {{ @outdoor }}
                 </repeat>
             </div>
 
@@ -35,7 +35,7 @@
 
         <div class="col-xs-3 ">
             <input class="form-control btn btn-default"
-                   type="submit" href="summary" value="Submit">
+                   type="submit" value="Submit">
         </div>
     </form>
 

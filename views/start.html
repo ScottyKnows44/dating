@@ -6,13 +6,13 @@
 <body>
 <div class="container">
 
-    <form action="#" method="post" class="form-horizontal">
+    <form action="#" method="post" class="form-horizontal align-content-center">
 
         <h1>Please tell us a little about your pet</h1>
 
         <div class="form-group">
 
-            <label for="first" class="col-sm-2 control-label bg-white"><p>First Name</p></label>
+            <label for="first" class="col-sm-2 control-label">First Name</label>
 
             <div class="col-sm-4">
                 <input class="form-control" type="text" name="first" id="first">
@@ -39,7 +39,7 @@
 
             <div class="col-sm-4">
                 <repeat group="{{ @genders }}" value="{{ @gender }}" >
-                    <input type="radio" name="gender" id="{{ @gender }}" value="{{ @gender }}">{{ @gender }}  </input>
+                    <input type="radio" name="gender" id="{{ @gender }}" value="{{ @gender }}">{{ @gender }}
                 </repeat>
             </div>
 
@@ -54,7 +54,7 @@
 
         <div class="col-xs-3 ">
             <input class="form-control btn btn-default"
-                   type="submit" href="start2" value="Next">
+                   type="submit" value="Next">
         </div>
     </form>
 
