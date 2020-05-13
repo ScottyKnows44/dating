@@ -11,3 +11,9 @@ p{
 body{
     background-image: url(../images/background.jpg);
 }
+
+#profileBio{
+  display: inline;
+    background: orange;
+    box-shadow: 10px 0 0 orange, -10px 0 0 orange;
+}

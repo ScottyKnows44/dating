@@ -2,88 +2,33 @@
 <html lang="en">
 <head>
     <title>Food Order</title>
-    <include href="includes/header.html"></include>
+    <include href="includes/summaryHeader.html"></include>
 </head>
 <body>
 
 <div class="container">
     <div class="py-5 text-center">
-        <h2>Overview of your Profile</h2>
-        <p class="lead">Below is everything you have submitted through our form. Please know that all information will be kept confidential and we will not sell your information.</p>
+        <h2>My Dating Profile</h2>
     </div>
-
-    <div class="row">
-
-        <div class="col-md-8 order-md-1">
-            <h3 class="mb-3">Profile overview From Page one</h3>
-
+        <div class="row col-sm-8">
+            <div class="col-md-8 order-md-1">
                 <div class="row">
-                    <div class="col-md-6 mb-3">
-                        <label>First name:</label>
-                        <p>{{ @SESSION.first }}</p>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label>Last name: </label>
-                        <p>{{ @SESSION.last }}</p>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label>Age: </label>
-                        <p>{{ @SESSION.age }}</p>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label>Gender</label>
-                        <p>{{ @SESSION.genders }}</p>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <label>Phone Number: </label>
-                        <p>{{ @SESSION.phoneNumber }}</p>
-                    </div>
-
+                    <p><strong>Name</strong>: {{ @SESSION.first }} {{ @SESSION.last }}</p><hr>
+                    <p><strong>Gender</strong>: {{ @SESSION.genders }}</p><hr>
+                    <p><strong>Age</strong>: {{ @SESSION.age }}</p><hr>
+                    <p><strong>Phone</strong>: {{ @SESSION.phoneNumber }}</p><hr>
+                    <p><strong>Email</strong>: {{ @SESSION.email }}</p><hr>
+                    <p><strong>State</strong>: {{ @SESSION.state }}</p><hr>
+                    <p><strong>Seeking</strong>: {{ @SESSION.genderPage2 }}</p><hr>
+                    <p><strong>Indoor Interest</strong>: {{ implode(@SESSION.indoor, ", ") }}</p><hr>
+                    <p><strong>Outdoor Interest</strong>: {{ implode(@SESSION.outdoor, ", ") }}</p><hr>
                 </div>
-            <h3 class="mb-3">Profile overview From Page Two</h3>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label>Email:</label>
-                    <p>{{ @SESSION.email }}</p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label>State: </label>
-                    <p>{{ @SESSION.state }}</p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label>Age: </label>
-                    <p>{{ @SESSION.age }}</p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label>Preferred Gender</label>
-                    <p>{{ @SESSION.genderPage2 }}</p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label>Bio: </label>
-                    <p>{{ @SESSION.bio }}</p>
-                </div>
-
             </div>
-            <h3 class="mb-3">Profile overview From Page Three</h3>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <label>Outdoor Interests Are:</label>
-                    <p>{{ implode(@SESSION.indoor, ", ") }}</p>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <label>Indoor Interests: </label>
-                    <p>{{ implode(@SESSION.outdoor, ", ") }}</p>
-                </div>
-
         </div>
-
-
-
-
+    <div class="row">
+        <img class="float-right"  src="images/profile-image-placeholder.png">
+        <p  id="profileBio"><wbr><strong>Biography</strong>: {{ @SESSION.bio }}</wbr></p><hr>
     </div>
-            </div>
-        </div>
 </div>
-
 </body>
 </html>
