@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Pet Order 3</title>
-    <include href="includes/header.html"></include>
+    <include href="includes/formHeader.html"></include>
 </head>
 <body>
 <div class="container">
@@ -16,7 +16,7 @@
 
             <div class="col-sm-4">
                 <repeat group="{{ @indoors }}" value="{{ @indoor }}" >
-                    <input type="checkbox" name="indoor[]" name="indoor" id="{{ @indoor }}" value="{{ @indoor }}">   {{ @indoor }}   </input>
+                    <input type="checkbox" name="indoor[]" name="indoor" id="{{ @indoor }}" value="{{ @indoor }}">       {{ @indoor }}       </input>
                 </repeat>
             </div>
 
@@ -27,7 +27,7 @@
 
             <div>
                 <repeat group="{{ @outdoors }}" value="{{ @outdoor }}" >
-                    <input type="checkbox" name="outdoor[]" id="{{ @outdoor }}" value="{{ @outdoor }}">   {{ @outdoor }}   </input>
+                    <input type="checkbox" name="outdoor[]" id="{{ @outdoor }}" value="{{ @outdoor }}">       {{ @outdoor }}       </input>
                 </repeat>
             </div>
 
