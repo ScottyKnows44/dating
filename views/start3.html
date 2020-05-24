@@ -18,6 +18,11 @@
                 <repeat group="{{ @indoors }}" value="{{ @indoor }}" >
                     <input type="checkbox" name="indoor[]"  value="{{ @indoor }}">       {{ @indoor }}
                 </repeat>
+                <span class="err">
+                <check if="{{ isset(@errors['inDoorError']) }}">
+                     {{ @errors['inDoorError'] }}
+                </check>
+            </span>
             </div>
 
         </div>
@@ -30,6 +35,11 @@
                     <input type="checkbox" name="outdoor[]"  value="{{ @outdoor }}">       {{ @outdoor }}
                 </repeat>
             </div>
+            <span class="err">
+                <check if="{{ isset(@errors['OutDoorError']) }}">
+                     {{ @errors['outDoorError'] }}
+                </check>
+            </span>
 
         </div>
 

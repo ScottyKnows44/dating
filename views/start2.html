@@ -18,6 +18,11 @@
             <div class="col-sm-4">
                 <input class="form-control" type="text" name="email" id="email">
             </div>
+            <span class="err">
+                <check if="{{ isset(@errors['email']) }}">
+                     {{ @errors['email'] }}
+                </check>
+            </span>
         </div>
 
     <div class="form-group">
