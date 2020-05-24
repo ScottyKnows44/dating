@@ -25,32 +25,32 @@ function validEmail($email) {
 
 function validOutdoor($outdoor)
 {
-    if($outdoor == ""){
+    if(empty($outdoor)){
         return false;
     }
-    $realOutdoors = getOutDoorInterests();
-    for($i = 0; $i < sizeof($outdoor); $i++){
-        for ($x=0; $x < sizeof($realOutdoors); $x++ ){
-            if($realOutdoors[$x] !== $outdoor[$i]){
-                return false;
-            }
+
+    $validOutdoor = getOutDoorInterests();
+
+    foreach ($validOutdoor as $activity){
+        if(!in_array($activity, $outdoor)){
+            return false;
         }
     }
-    return false;
+    return true;
 }
 
 function validIndoor($indoor)
 {
-    if($indoor == ""){
+    if(empty($indoor)){
         return false;
     }
-    $realIndoors = getInDoorInterests();
-    for($i = 0; $i < sizeof($indoor); $i++){
-        for ($x=0; $x < sizeof($realIndoors); $x++ ){
-            if($realIndoors[$x] !== $indoor[$i]){
-                return false;
-            }
+
+    $validIndoor = getInDoorInterests();
+
+    foreach ($validIndoor as $activity){
+        if(!in_array($activity, $indoor)){
+            return false;
         }
     }
-    return false;
+    return true;
 }

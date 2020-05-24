@@ -98,7 +98,8 @@ $f3->route('GET|POST /start3 ', function($f3){
 
     $f3->set('indoors', $indoors);
     $f3->set('outdoors', $outdoors);
-
+    $f3->set('selectedIndoors', $_POST['indoors']);
+    $f3->set('selectedOutdoors', $_POST['Outdoors']);
     $view = new Template();
     echo $view->render('views/start3.html');
 });

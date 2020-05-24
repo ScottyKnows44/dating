@@ -16,7 +16,7 @@
 
             <div class="col-sm-4">
                 <repeat group="{{ @indoors }}" value="{{ @indoor }}" >
-                    <input type="checkbox" name="indoor[]"  value="{{ @indoor }}">       {{ @indoor }}
+                    <input type="checkbox" name="indoor[]"  value="{{ @indoor }}">      {{ ucfirst(@indoor) }}
                 </repeat>
                 <span class="err">
                 <check if="{{ isset(@errors['inDoorError']) }}">
@@ -32,7 +32,7 @@
 
             <div>
                 <repeat group="{{ @outdoors }}" value="{{ @outdoor }}" >
-                    <input type="checkbox" name="outdoor[]"  value="{{ @outdoor }}">       {{ @outdoor }}
+                    <input type="checkbox" name="outdoor[]"  value="{{ @outdoor }}">       {{ ucfirst(@outdoor) }}
                 </repeat>
             </div>
             <span class="err">
