@@ -29,13 +29,6 @@ function validOutdoor($outdoor)
         return false;
     }
 
-    $validOutdoor = getOutDoorInterests();
-
-    foreach ($validOutdoor as $activity){
-        if(!in_array($activity, $outdoor)){
-            return false;
-        }
-    }
     return true;
 }
 
@@ -47,10 +40,11 @@ function validIndoor($indoor)
 
     $validIndoor = getInDoorInterests();
 
-    foreach ($validIndoor as $activity){
-        if(!in_array($activity, $indoor)){
+    foreach ($indoor as $activity){
+        if(!in_array($activity, $validIndoor)){
             return false;
         }
     }
+
     return true;
 }

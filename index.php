@@ -1,6 +1,6 @@
 <?php
-//ini_set('display_errors', 1);
-//error_reporting(E_ALL);
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 require_once('vendor/autoload.php');
 require_once('models/data-layer.php');
 require_once('models/Validation.php');
@@ -15,7 +15,6 @@ $f3->route('GET / ', function(){
 
 $f3->route('GET|POST /start ', function($f3){
     $genders = getGender();
-    //var_dump($_POST);
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         if(validName($_POST['first']) == false){
@@ -42,7 +41,7 @@ $f3->route('GET|POST /start ', function($f3){
     }
 
     $f3->set('genders', $genders);
-
+    $f3->set('selectedGender', $_POST['gender']);
     $view = new Template();
     echo $view->render('views/start.html');
 });
@@ -67,6 +66,7 @@ $f3->route('GET|POST /start2 ', function ($f3){
     }
 
     $f3->set('genders', $genders);
+    $f3->set('selectedPreferred', $_POST['gender']);
     $f3->set('states', $states);
     $view = new Template();
     echo $view->render('views/start2.html');
@@ -76,30 +76,32 @@ $f3->route('GET|POST /start3 ', function($f3){
     $outdoors = getOutDoorInterests();
     $indoors = getInDoorInterests();
 
+
+
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         var_dump($_POST);
-        if(validIndoor($_POST['indoors']) == false){
+
+        if(validIndoor($_POST['indoor']) == false){
             $f3->set('errors[inDoorError]', "Please select an indoor activity");
         }
 
-        if(validOutdoor($_POST['outdoors']) == false){
+        if(validOutdoor($_POST['outdoor']) == false){
             $f3->set('errors[outDoorError]', "Please select an outdoor activity");
         }
 
-        if(!empty($f3->get('errors'))){
+        if(empty($f3->get('errors'))){
             $_SESSION['indoor'] = $_POST['indoor'];
             $_SESSION['outdoor'] = $_POST['outdoor'];
-            $f3->reroute('start3');
+            $f3->reroute('summary');
             session_destroy();
         }
-
     }
 
     $f3->set('indoors', $indoors);
     $f3->set('outdoors', $outdoors);
-    $f3->set('selectedIndoors', $_POST['indoors']);
-    $f3->set('selectedOutdoors', $_POST['Outdoors']);
+    $f3->set('selectedIndoors', $_POST['indoor']);
+    $f3->set('selectedOutdoors', $_POST['outdoor']);
     $view = new Template();
     echo $view->render('views/start3.html');
 });

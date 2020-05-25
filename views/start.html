@@ -53,9 +53,17 @@
             <label class="col-sm-2 control-label">Gender</label>
 
             <div class="col-sm-4">
-                <repeat group="{{ @genders }}" value="{{ @gender }}" >
-                    <input type="radio" name="gender" id="{{ @gender }}" value="{{ @gender }}">{{ @gender }}
-                </repeat>
+                    <repeat group="{{ @genders }}" value="{{ @gender }}">
+                        <label><input type="radio"
+                                      name="gender"
+                                      id="{{ @gender }}"
+                                      value="{{ @gender }}"
+                            <check if="{{ @gender == @selectedGender }}" >
+                                checked="checked"
+                            </check>
+                            > {{ ucfirst(@gender) }}
+                            </label><br>
+                    </repeat>
             </div>
 
         </div>
