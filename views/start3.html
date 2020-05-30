@@ -18,7 +18,6 @@
                 <repeat group="{{ @indoors }}" value="{{ @indoor }}" >
                     <label><input type="checkbox"
                            name="indoor[]"
-                           id="{{ trim(@indoor) }}"
                            value="{{ @indoor }}"
                     <check if="{{ @indoor == @selectedIndoors }}" >
                         checked="checked"
