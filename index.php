@@ -17,6 +17,16 @@ $f3->route('GET|POST /start ', function($f3){
     $genders = getGender();
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
+        if($_POST['member'] == "yes"){
+            $member = new Member();
+            $member->setFirstName($_POST['first']);
+            $member->setLastName($_POST['last']);
+            $member->setAge($_POST['age']);
+            $member->setGender($_POST['gender']);
+            $member->setPhone($_POST['phone']);
+            $_SESSION['member'] = $member;
+        }
+
         if(validName($_POST['first']) == false){
             $f3->set('errors["firstName"]', "Please enter a first name");
         }
