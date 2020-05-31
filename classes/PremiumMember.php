@@ -27,4 +27,24 @@ class PremiumMember
         return $this->_inDoorInterests;
     }
 
+    public function toStringInDoor()
+    {
+        $out = "";
+
+        if (!empty($this->_inDoorInterests)) {
+            $out .= implode(" & ", $this->_inDoorInterests);
+        }
+        return $out;
+    }
+
+    public function toStringOutDoor(){
+        $out = "";
+
+        if(!empty($this->_outDoorInterests)){
+            $out .= implode(" & ", $this->_outDoorInterests);
+        }
+        return $out;
+    }
+
+
 }

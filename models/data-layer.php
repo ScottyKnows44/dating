@@ -4,6 +4,10 @@ function getGender(){
     return array("Male", "Female");
 }
 
+function getInterests(){
+    return array("Male", "Female");
+}
+
 function getInDoorInterests(){
     return array("tv", "movies", "cooking", "board games", "puzzles", "reading", "playing cards", "video games");
 }

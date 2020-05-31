@@ -12,9 +12,9 @@ class member
     private $_seeking;
     private $_bio;
 
-    public function __construct($first, $last, $age, $gender, $phone)
+    public function __construct($first, $last, $age, $gender = "", $phone = "")
     {
-        $this->setFirstName($last);
+        $this->setFirstName($first);
         $this->setLastName($last);
         $this->setAge($age);
         $this->setGender($gender);
@@ -93,5 +93,15 @@ class member
         return $this->_state;
     }
 
-
+    public function toString(){
+        $out = "";
+        $out = "<p><strong>" . "First Name" . "</strong>:" .  $this->_first . "</p><hr>";
+        $out = "<p><strong>" . "Last Name" . "</strong>:" .  $this->_last . "</p><hr>";
+        $out = "<p><strong>" . "Age" . "</strong>:" .  $this->_age . "</p><hr>";
+        $out = "<p><strong>" . "Phone" . "</strong>:" .  $this->_phone . "</p><hr>";
+        $out = "<p><strong>" . "Email" . "</strong>:" .  $this->_email . "</p><hr>";
+        $out = "<p><strong>" . "State" . "</strong>:" .  $this->_state . "</p><hr>";
+        $out = "<p><strong>" . "Seeking" . "</strong>:" .  $this->_seeking . "</p><hr>";
+        return $out;
+    }
 }
