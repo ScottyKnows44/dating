@@ -1,14 +1,17 @@
 <?php
 
-class PremiumMember
+class PremiumMember extends Member
 {
     private $_outDoorInterests;
     private $_inDoorInterests;
 
-    public function __construct($indoor, $outdoor)
+    public function __construct($first, $last, $age, $gender = "", $phone = "")
     {
-     $this->setIndoorInterests($indoor);
-     $this->setOutDoorInterests($outdoor);
+        $this->setFirstName($first);
+        $this->setLastName($last);
+        $this->setAge($age);
+        $this->setGender($gender);
+        $this->setPhone($phone);
     }
 
     public function setIndoorInterests($indoor){

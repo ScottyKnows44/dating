@@ -22,12 +22,9 @@
                     <p><strong>State: </strong>{{ @SESSION.member->getState() }}</p><hr>
                     <p><strong>Seeking: </strong>{{ @SESSION.member->getSeeking() }}</p><hr>
 
-                    <check if="{{ !empty(@SESSION.PremiumMember->getInDoorInterests()) }}">
-                        <p><strong>Indoor Interest</strong>: {{ @SESSION.PremiumMember->toStringInDoor() }}</p><hr>
-                    </check>
-
-                    <check if="!empty(@SESSION.PremiumMember->getOutDoorInterests())">
-                        <p><strong>Outdoor Interest</strong>: {{ @SESSION.PremiumMember->toStringOutDoor() }}</p><hr>
+                    <check if="{{ @SESSION.member instanceOf PremiumMember }}">
+                        <p><strong>Indoor Interest</strong>: {{ @SESSION.member->toStringInDoor() }}</p><hr>
+                        <p><strong>Outdoor Interest</strong>: {{ @SESSION.member->toStringOutDoor() }}</p><hr>
                     </check>
 
                 </div>
